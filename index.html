@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -184,31 +184,101 @@
         </section>
 
 
-        <!-- CONTACT -->
+<!-- CONTACT -->
 
-        <section class="contact section-pad" id="contact">
-            <p class="eyebrow"><span>04</span> / LA SUITE ?</p>
+<section class="contact section-pad" id="contact">
 
+    <div class="contact-heading">
+        <p class="eyebrow"><span>04</span> / ON PASSE À LA SUITE</p>
+        <span class="contact-index">OUVERT AUX ÉCHANGES ↗</span>
+    </div>
+
+    <div class="contact-layout">
+
+        <div class="contact-intro">
             <h2>
-                Tu as une idée ?<br>
-                <span>Parlons-en<span class="acid">.</span></span>
+                On a quelque<br>
+                chose à <span>construire<span class="acid">.</span></span>
             </h2>
 
-            <div class="contact-bottom">
-                <p>
-                    Une question, un projet ou simplement envie d'échanger ?
-                    Je serai ravi d'en discuter.
-                </p>
+            <p class="contact-description">
+                Une idée, un projet web ou simplement envie de discuter ?
+                Écris-moi quelques lignes. Je te répondrai dès que possible.
+            </p>
 
-                <!-- Remplace cette adresse par ton adresse réelle -->
-                <a class="contact-button" href="mailto:tonadresse@email.com">
-                    ENVOYER UN E-MAIL <span>↗</span>
-                </a>
+            <div class="contact-note">
+                <span class="contact-status"></span>
+                <span>DISPONIBLE POUR ÉCHANGER</span>
             </div>
-        </section>
+        </div>
 
+        <form class="contact-form"
+              action="https://formspree.io/f/xaeqjpzr"
+              method="POST">
+
+            <div class="form-topline">
+                <span>01 — TON MESSAGE</span>
+                <span>QUELQUES MOTS SUFFISENT</span>
+            </div>
+
+            <div class="form-field">
+                <label for="contact-name">COMMENT TU T'APPELLES ?</label>
+                <input
+                    type="text"
+                    id="contact-name"
+                    name="name"
+                    placeholder="Ton prénom ou ton nom"
+                    autocomplete="name"
+                    required
+                >
+            </div>
+
+            <div class="form-field">
+                <label for="contact-email">OÙ PUIS-JE TE RÉPONDRE ?</label>
+                <input
+                    type="email"
+                    id="contact-email"
+                    name="email"
+                    placeholder="ton@email.com"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+            <div class="form-field">
+                <label for="contact-message">QU'AS-TU EN TÊTE ?</label>
+                <textarea
+                    id="contact-message"
+                    name="message"
+                    placeholder="Parle-moi de ton idée..."
+                    rows="4"
+                    required
+                ></textarea>
+            </div>
+
+            <button class="contact-button" type="submit">
+                <span>ENVOYER LE MESSAGE</span>
+                <span class="contact-button-arrow">↗</span>
+            </button>
+
+            <p class="contact-privacy">
+                Ton message sera utilisé pour pouvoir te répondre.
+            </p>
+
+        </form>
+
+    </div>
+
+    <div class="contact-bottomline">
+        <span>UNE IDÉE PEUT COMMENCER PAR UN MESSAGE.</span>
+        <span>LOÏC CHAUVELOT · 2026</span>
+    </div>
+
+</section>
     </main>
 
+
+    <!-- PIED DE PAGE -->
 
     <footer class="footer">
         <a class="wordmark" href="#home">LOÏC<span>®</span></a>
@@ -216,5 +286,9 @@
         <a href="#home" class="back-top">RETOUR EN HAUT ↑</a>
     </footer>
 
+    <script src="script.js"></script>
+
+
 </body>
 </html>
+```
