@@ -1,0 +1,855 @@
+
+/* =========================
+   VARIABLES ET BASE
+========================= */
+
+:root {
+    --background: #101114;
+    --surface: #191a1f;
+    --text: #f5f5f5;
+    --muted: #a7a7ae;
+    --accent: #ff6b35;
+    --border: #303137;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 20px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-wrap: break-word;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.section {
+    padding: 80px 7%;
+}
+
+/* =========================
+   HEADER ET NAVIGATION
+========================= */
+
+.header {
+    min-height: 76px;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 24px;
+}
+
+.navigation a {
+    font-size: 14px;
+    color: var(--muted);
+    transition: color 0.2s;
+}
+
+.navigation a:hover {
+    color: var(--accent);
+}
+
+.navigation .nav-button {
+    padding: 10px 15px;
+    color: var(--text);
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+}
+
+/* =========================
+   ACCUEIL
+========================= */
+
+.hero {
+    min-height: 540px;
+    padding: 85px 7%;
+    display: flex;
+    align-items: center;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(16, 17, 20, 0.97) 0%,
+            rgba(16, 17, 20, 0.80) 55%,
+            rgba(16, 17, 20, 0.35) 100%
+        ),
+        url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1800&q=85")
+        center 55% / cover no-repeat;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 680px;
+}
+
+.eyebrow {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.hero h1 {
+    font-size: clamp(38px, 5vw, 66px);
+    line-height: 1.1;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero-description {
+    max-width: 510px;
+    color: #d0d0d4;
+    margin-bottom: 28px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.button-primary,
+.button-secondary {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 46px;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.button-primary {
+    background: var(--accent);
+    color: #171717;
+}
+
+.button-primary:hover {
+    background: #ff8558;
+    transform: translateY(-2px);
+}
+
+.button-secondary {
+    border: 1px solid #77777d;
+}
+
+.button-secondary:hover {
+    border-color: var(--accent);
+}
+
+/* =========================
+   TITRES DES SECTIONS
+========================= */
+
+.section-heading {
+    max-width: 650px;
+    margin-bottom: 36px;
+}
+
+.section-heading h2,
+.about h2,
+.contact h2 {
+    font-size: clamp(29px, 4vw, 42px);
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+.section-heading > p:last-child,
+.about-content > p:not(.eyebrow),
+.contact > p:not(.eyebrow) {
+    color: var(--muted);
+}
+
+/* =========================
+   SERVICES
+========================= */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.service-card {
+    min-width: 0;
+    padding: 26px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.service-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.service-number {
+    color: var(--accent);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 18px;
+}
+
+.service-card h3 {
+    font-size: 19px;
+    line-height: 1.35;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* =========================
+   PRESENTATION DU GARAGE
+========================= */
+
+.about {
+    display: grid;
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+    align-items: center;
+    gap: 40px;
+    background: #15161a;
+}
+
+.about-content > p:not(.eyebrow) {
+    max-width: 550px;
+    margin-bottom: 24px;
+}
+
+.text-link {
+    display: inline-block;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.about-panel {
+    min-width: 0;
+    min-height: 230px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    background: linear-gradient(135deg, #28292f, #17181c);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.panel-symbol {
+    color: var(--accent);
+    font-size: clamp(42px, 5vw, 62px);
+    font-weight: 900;
+    letter-spacing: -4px;
+}
+
+.about-panel p {
+    font-size: 21px;
+    font-weight: 700;
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    text-align: center;
+}
+
+.contact .eyebrow {
+    margin-bottom: 15px;
+}
+
+.contact > p:not(.eyebrow) {
+    max-width: 550px;
+    margin: 0 auto 25px;
+}
+
+.contact .button-primary {
+    margin-bottom: 18px;
+}
+
+.contact .demo-note {
+    margin-top: 12px;
+    font-size: 12px;
+}
+
+/* =========================
+   PIED DE PAGE
+========================= */
+
+.footer {
+    padding: 26px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 14px;
+    border-top: 1px solid var(--border);
+}
+
+.footer p {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* =========================
+   TABLETTES
+========================= */
+
+@media (max-width: 900px) {
+    .header {
+        padding: 18px 5%;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .navigation {
+        gap: 16px;
+        flex-wrap: wrap;
+    }
+
+    .section {
+        padding: 65px 5%;
+    }
+
+    .hero {
+        min-height: 490px;
+        padding: 70px 5%;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .about-panel {
+        min-height: 190px;
+    }
+}
+
+/* =========================
+   MOBILES
+========================= */
+
+@media (max-width: 600px) {
+    body {
+        line-height: 1.55;
+    }
+
+    .header {
+        padding: 18px 20px;
+        align-items: center;
+        gap: 14px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .navigation {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .navigation a {
+        min-width: 0;
+        min-height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8px;
+        border: 1px solid var(--border);
+        border-radius: 5px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    .navigation .nav-button {
+        border-color: var(--accent);
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 65px 22px;
+        background:
+            linear-gradient(
+                90deg,
+                rgba(16, 17, 20, 0.94),
+                rgba(16, 17, 20, 0.78)
+            ),
+            url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1000&q=85")
+            center / cover no-repeat;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .eyebrow {
+        font-size: 11px;
+        letter-spacing: 1.5px;
+        margin-bottom: 14px;
+    }
+
+    .hero h1 {
+        font-size: clamp(34px, 9vw, 46px);
+        line-height: 1.12;
+        margin-bottom: 18px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+        margin-bottom: 24px;
+    }
+
+    .hero-buttons {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .hero-buttons a {
+        width: 100%;
+        min-height: 48px;
+    }
+
+    .section {
+        padding: 55px 22px;
+    }
+
+    .section-heading {
+        margin-bottom: 26px;
+    }
+
+    .section-heading h2,
+    .about h2,
+    .contact h2 {
+        font-size: 30px;
+        line-height: 1.2;
+        margin-bottom: 13px;
+    }
+
+    .services-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .service-card {
+        padding: 22px;
+    }
+
+    .service-number {
+        margin-bottom: 12px;
+    }
+
+    .service-card h3 {
+        font-size: 18px;
+    }
+
+    .about {
+        gap: 24px;
+    }
+
+    .about-content > p:not(.eyebrow) {
+        margin-bottom: 20px;
+    }
+
+    .about-panel {
+        min-height: 180px;
+        padding: 24px;
+    }
+
+    .panel-symbol {
+        font-size: 48px;
+    }
+
+    .about-panel p {
+        font-size: 19px;
+    }
+
+    .contact .button-primary {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .footer {
+        padding: 24px 22px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+}
+
+/* =========================
+   PETITS MOBILES
+========================= */
+
+@media (max-width: 360px) {
+    .header {
+        padding-right: 16px;
+        padding-left: 16px;
+    }
+
+    .logo {
+        font-size: 17px;
+        letter-spacing: 0.5px;
+    }
+
+    .navigation {
+        gap: 7px;
+    }
+
+    .navigation a {
+        font-size: 12px;
+        padding: 7px 5px;
+    }
+
+    .hero {
+        padding: 50px 18px;
+    }
+
+    .hero h1 {
+        font-size: 33px;
+    }
+
+    .section {
+        padding: 45px 18px;
+    }
+}
+
+/* =========================
+   REDUCTION DES ANIMATIONS
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
+
+
+/* =========================
+   FINITIONS HAUT DE GAMME
+   VERSION ORDINATEUR
+========================= */
+
+@media (min-width: 901px) {
+
+    /* NAVIGATION PLUS ELEGANTE */
+
+    .header {
+        min-height: 88px;
+        padding: 20px 8%;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(16, 17, 20, 0.94);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .logo {
+        font-size: 23px;
+        letter-spacing: 1.5px;
+    }
+
+    .navigation {
+        gap: 32px;
+    }
+
+    .navigation a {
+        font-size: 13px;
+        transition: color 0.25s ease;
+    }
+
+    .navigation .nav-button {
+        padding: 12px 19px;
+        border-radius: 3px;
+        transition: background 0.25s ease,
+                    color 0.25s ease;
+    }
+
+    .navigation .nav-button:hover {
+        background: var(--accent);
+        color: #101114;
+    }
+
+    /* ACCUEIL PLUS IMPRESSIONNANT */
+
+    .hero {
+        min-height: 660px;
+        padding: 110px 8%;
+        position: relative;
+        background:
+            linear-gradient(
+                90deg,
+                rgba(12, 13, 16, 0.98) 0%,
+                rgba(12, 13, 16, 0.86) 42%,
+                rgba(12, 13, 16, 0.25) 100%
+            ),
+            url("https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=2000&q=90")
+            center 55% / cover no-repeat;
+    }
+
+    .hero-content {
+        max-width: 720px;
+    }
+
+    .hero .eyebrow {
+        display: inline-block;
+        padding-left: 13px;
+        border-left: 3px solid var(--accent);
+        letter-spacing: 3px;
+        margin-bottom: 24px;
+    }
+
+    .hero h1 {
+        max-width: 720px;
+        font-size: clamp(58px, 5.2vw, 78px);
+        line-height: 1.04;
+        letter-spacing: -2px;
+        margin-bottom: 28px;
+    }
+
+    .hero-description {
+        max-width: 480px;
+        font-size: 17px;
+        line-height: 1.8;
+        color: #d1d1d5;
+        margin-bottom: 36px;
+    }
+
+    .hero-buttons {
+        gap: 18px;
+    }
+
+    .button-primary,
+    .button-secondary {
+        min-height: 52px;
+        padding: 15px 24px;
+        border-radius: 3px;
+        letter-spacing: 0.2px;
+    }
+
+    .button-primary {
+        box-shadow: 0 8px 24px rgba(255, 107, 53, 0.12);
+    }
+
+    .button-primary:hover {
+        box-shadow: 0 10px 30px rgba(255, 107, 53, 0.22);
+    }
+
+    .button-secondary {
+        background: rgba(255, 255, 255, 0.03);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .button-secondary:hover {
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    /* SECTIONS PLUS AEREES */
+
+    .section {
+        padding: 100px 8%;
+    }
+
+    .section-heading {
+        max-width: 680px;
+        margin-bottom: 48px;
+    }
+
+    .section-heading h2,
+    .about h2,
+    .contact h2 {
+        font-size: 43px;
+        letter-spacing: -1px;
+        line-height: 1.15;
+    }
+
+    .section-heading > p:last-child,
+    .about-content > p:not(.eyebrow),
+    .contact > p:not(.eyebrow) {
+        font-size: 15px;
+        line-height: 1.9;
+    }
+
+    /* CARTES DE SERVICES PLUS FINES */
+
+    .services-grid {
+        gap: 22px;
+    }
+
+    .service-card {
+        min-height: 230px;
+        padding: 32px;
+        background: linear-gradient(
+            145deg,
+            #1d1e23,
+            #17181c
+        );
+        border: 1px solid #2b2c32;
+        border-radius: 5px;
+        transition: border-color 0.25s ease,
+                    background 0.25s ease,
+                    transform 0.25s ease;
+    }
+
+    .service-card:hover {
+        background: #202126;
+        border-color: rgba(255, 107, 53, 0.65);
+        transform: translateY(-5px);
+    }
+
+    .service-number {
+        font-size: 12px;
+        letter-spacing: 2px;
+        margin-bottom: 26px;
+    }
+
+    .service-card h3 {
+        font-size: 20px;
+        margin-bottom: 14px;
+    }
+
+    .service-card p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    /* PRESENTATION DU GARAGE */
+
+    .about {
+        gap: 70px;
+        padding-top: 105px;
+        padding-bottom: 105px;
+    }
+
+    .about-content .eyebrow {
+        letter-spacing: 2.5px;
+    }
+
+    .about-panel {
+        min-height: 290px;
+        padding: 38px;
+        border-radius: 5px;
+        background:
+            radial-gradient(
+                circle at top right,
+                rgba(255, 107, 53, 0.12),
+                transparent 55%
+            ),
+            linear-gradient(135deg, #25262c, #17181c);
+        border-color: #35363c;
+    }
+
+    .panel-symbol {
+        font-size: 70px;
+    }
+
+    .about-panel p {
+        font-size: 24px;
+        line-height: 1.4;
+    }
+
+    .text-link {
+        transition: color 0.2s ease;
+    }
+
+    .text-link:hover {
+        color: #ff956f;
+    }
+
+    /* CONTACT PLUS DISTINCTIF */
+
+    .contact {
+        padding-top: 110px;
+        padding-bottom: 110px;
+        background:
+            radial-gradient(
+                ellipse at center,
+                rgba(255, 107, 53, 0.055),
+                transparent 65%
+            );
+    }
+
+    .contact h2 {
+        max-width: 700px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .contact > p:not(.eyebrow) {
+        max-width: 570px;
+    }
+
+    /* PIED DE PAGE DISCRET */
+
+    .footer {
+        min-height: 85px;
+        padding: 28px 8%;
+        border-top-color: rgba(255, 255, 255, 0.08);
+    }
+}
