@@ -765,9 +765,12 @@ a {
         padding: 18px;
     }
 
+    
     .project-title h3 {
-        font-size: 70px;
+        font-size: clamp(42px, 13vw, 60px);
+        letter-spacing: -0.07em;
     }
+
 
     .project-details {
         padding: 15px 0 0;
@@ -864,9 +867,12 @@ a {
         min-height: 360px;
     }
 
+    
     .project-title h3 {
-        font-size: 58px;
+        font-size: clamp(38px, 12.5vw, 46px);
+        letter-spacing: -0.06em;
     }
+
 
     .section-count {
         max-width: 100px;
